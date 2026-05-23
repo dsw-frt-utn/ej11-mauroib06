@@ -1,4 +1,6 @@
-﻿namespace Dsw2026Ej11.Domain;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Dsw2026Ej11.Domain;
 
 public class Libro
 {
@@ -13,6 +15,10 @@ public class Libro
         Precio = precio;
     }
 
+    public override string ToString()
+    {
+        return $"Id: {Id}, Título: {Titulo}, Precio: {Precio:C}";
+    }
     public static List<Libro> CrearLista()
     {
         return new List<Libro>
@@ -48,5 +54,7 @@ public class Libro
             new Libro(29, "Inteligencia Artificial", 78000),
             new Libro(30, "Cloud Computing", 62000)
         };
+
+        
     }
 }
